@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression" verbose="10">
+	<test name="LFGdotCOM">
+		<classes>
+			<class name="com.orasi.cucumber.CucumberRunner"></class>		
+		</classes>
+	</test>
+</suite>
