@@ -12,10 +12,15 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+
+
+
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.orasi.utils.TestReporter;
+
+import cucumber.api.testng.TestNGCucumberRunner;
 
 public class BaseTest {
     private static String environment;
@@ -23,8 +28,11 @@ public class BaseTest {
     private String testName;
     private int logLevel;
     private boolean reportToMustard = false;
+    
+    protected TestNGCucumberRunner testNGCucumberRunner;
 
-    @BeforeSuite(alwaysRun = true)
+
+    @BeforeSuite//(alwaysRun = true)
     @Parameters({ "environment", "runLocation", "logLevel", "reportToMustard" })
     public void beforeSuite(@Optional String environment, @Optional String runLocation, @Optional String logLevel, @Optional String reportToMustard) {
 

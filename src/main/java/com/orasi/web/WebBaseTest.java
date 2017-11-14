@@ -28,6 +28,10 @@ import com.orasi.utils.TestReporter;
 import com.saucelabs.common.SauceOnDemandAuthentication;
 import com.saucelabs.saucerest.SauceREST;
 
+import cucumber.api.testng.TestNGCucumberRunner;
+
+
+
 /**
  *
  * @author Justin Phlegar & Waightstill W Avery
@@ -42,6 +46,8 @@ import com.saucelabs.saucerest.SauceREST;
  *
  */
 public class WebBaseTest extends BaseTest {
+	
+	
     /*
      * Test Environment Fields
      */
@@ -245,6 +251,7 @@ public class WebBaseTest extends BaseTest {
         setBrowserUnderTest(browserUnderTest);
         setBrowserVersion(browserVersion);
         setOperatingSystem(operatingSystem);
+        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
     /**
@@ -260,6 +267,7 @@ public class WebBaseTest extends BaseTest {
         setBrowserUnderTest(browserUnderTest);
         setBrowserVersion(browserVersion);
         setOperatingSystem(operatingSystem);
+        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
     /*
@@ -368,6 +376,7 @@ public class WebBaseTest extends BaseTest {
         if (getDriver() != null && isNotEmpty(getDriver().getWindowHandles()) && !getDriver().toString().contains("null")) {
             getDriver().quit();
         }
+        testNGCucumberRunner.finish();
     }
 
     /**
@@ -391,6 +400,7 @@ public class WebBaseTest extends BaseTest {
                 getDriver().quit();
             }
         }
+        testNGCucumberRunner.finish();
     }
 
     /**

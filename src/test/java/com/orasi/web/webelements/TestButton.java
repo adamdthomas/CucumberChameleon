@@ -16,7 +16,6 @@ import ru.yandex.qatools.allure.annotations.Title;
 
 public class TestButton extends WebBaseTest {
     @BeforeTest(groups = { "regression", "interfaces", "button", "dev" })
-
     public void setup() {
         setApplicationUnderTest("Test App");
         setPageURL("http://orasi.github.io/Chameleon/sites/unitTests/orasi/core/interfaces/button.html");
